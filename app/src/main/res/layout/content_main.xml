@@ -53,14 +53,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Landline"
-                android:id="@+id/radioButton"
+                android:id="@+id/landLine"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cell"
-                android:id="@+id/radioButton2"
+                android:id="@+id/cell"
                 android:checked="false" />
         </RadioGroup>
 
@@ -68,12 +68,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:id="@+id/button" />
+            android:id="@+id/button"
+            android:onClick="onClickSave" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/textView" />
+            android:id="@+id/txtDisplayData" />
     </LinearLayout>
 </RelativeLayout>
