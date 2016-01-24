@@ -5,9 +5,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,44 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+    }
+
+    public void onClickSave(View v){
+
+        TextView nameObj = (TextView) findViewById(R.id.txtName);
+        String nameString = nameObj.getText().toString();
+
+        TextView emailObj = (TextView) findViewById(R.id.txtEmail);
+        String emailString = emailObj.getText().toString();
+
+        TextView phoneObj = (TextView) findViewById(R.id.txtPhone);
+        String phoneString = phoneObj.getText().toString();
+
+        RadioButton landLineObj = (RadioButton) findViewById(R.id.landLine);
+        RadioButton cellObj = (RadioButton) findViewById(R.id.cell);
+
+        Boolean landLineBoolean = landLineObj.isChecked();
+        Boolean cellBoolean = cellObj.isChecked();
+
+        String phoneTypeString = this.phoneType(cellBoolean, landLineBoolean);
+
+        TextView displayDataObj = (TextView)findViewById(R.id.txtDisplayData);
+        displayDataObj.setText("Name: " + nameString + "\n" +
+                                "Email: " + emailString + "\n"+
+                                "Phone: " + phoneString +
+                                " [" + phoneTypeString + "]");
+    }
+
+    public String phoneType(boolean cell, boolean landLine) {
+        if(cell) {
+            return "Cell";
+        } else if (landLine) {
+            return "Landline";
+        } else {
+            return "";
+        }
     }
 
     @Override
@@ -49,4 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
