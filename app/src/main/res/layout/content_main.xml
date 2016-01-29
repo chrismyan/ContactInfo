@@ -24,9 +24,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
-            android:id="@+id/txtName" />
+            android:id="@+id/txtName"
+            android:hint="Name"
+            android:singleLine="true" />
 
         <EditText
             android:layout_width="match_parent"
@@ -34,7 +35,7 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/txtEmail"
-            android:text="Email" />
+            android:hint="Email" />
 
         <EditText
             android:layout_width="match_parent"
@@ -42,7 +43,7 @@
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/txtPhone"
-            android:text="Phone" />
+            android:hint="Phone" />
 
         <RadioGroup
             android:orientation="horizontal"
